@@ -1,0 +1,311 @@
+import 'package:flutter/material.dart';
+
+class KrsPage extends StatelessWidget {
+  final List<Map<String, dynamic>> krsList = [
+    {
+      'no': 1,
+      'kode Mk': '	UNS441',
+      'nama Mk': '	AGAMA II',
+      'sks': 	2.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'FST Gedung B Lantai 3 Ruang Aula 1',
+      'jadwal': 'Senin / Jam 07:30:00 - 09:10:00',
+      'dosen': 'Ahmad Fikri Rosyandi ,S.Pd.,M.Pd,',
+    },
+     {
+      'no': 2,
+      'kode Mk': '	DSI345',
+      'nama Mk': '	ANALISIS DAN PERANCANGAN SISTEM INFORMASI	',
+      'sks': 	3.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'FST Gedung B Lantai 1 Ruang 10	',
+      'jadwal': 'Rabu / Jam 15:40:00 - 18:10:00		',
+      'dosen': 'Reni Aryani, S.Kom., M.S.I. & Mutia Fadhila Putri, M.Kom.',
+    },
+    {
+      'no': 3,
+      'kode Mk': 'DSI441',
+      'nama Mk': 'PEMROGRAMAN VISUAL',
+      'sks': 	2.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'Laboratorium Komputasi Sains',
+      'jadwal': '	Selasa / Jam 07:30:00 - 09:10:00',
+      'dosen': 'Edi Saputra, S.T., M.Sc. & Andre Rabiula, S.Kom., M.Eng.',
+    },
+     {
+      'no': 4,
+      'kode Mk': 'DSI443',
+      'nama Mk': 'JARINGAN KOMPUTER DAN KOMUNIKASI DATA',
+      'sks': 	3.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'Laboratorium ICT.1',
+      'jadwal': '	Selasa / Jam 15:40:00 - 18:10:00',
+      'dosen': 'Ir. Indra Weni, M.Kom. & Mohamad Ilhami, S.T., M.Kom.',
+    },
+     {
+      'no': 5,
+      'kode Mk': 'DSI444',
+      'nama Mk': 'PEMROGRAMAN WEB II',
+      'sks': 	2.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'Laboratorium ICT.2',
+      'jadwal': 'Selasa / Jam 10:10:00 - 11:50:00		',
+      'dosen': 'Zainil Abidin, S.T., M.Eng. & Muhammad Razi A., S.T., MMSI.',
+    },
+    {
+      'no': 6,
+      'kode Mk': 'DSI442',
+      'nama Mk': 'INTERAKSI MANUSIA DAN KOMPUTER',
+      'sks': 	3.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'Laboratorium ICT.2',
+      'jadwal': '	Kamis / Jam 15:40:00 - 18:10:00',
+      'dosen': 'Benedika Ferdian Hutabarat, S.Komp., M.Kom. & Muhammad Razi A., S.T., MMSI. & Zainil Abidin, S.T., M.Eng.',
+    },
+     {
+      'no': 7,
+      'kode Mk': 'LSI444',
+      'nama Mk': 'PRAKTIKUM PEMROGRAMAN WEB II	',
+      'sks': 	1.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'Laboratorium ICT.2',
+      'jadwal': '	Selasa / Jam 11:50:00 - 12:40:00',
+      'dosen': 'Zainil Abidin, S.T., M.Eng. & Muhammad Razi A., S.T., MMSI.',
+    },
+     {
+      'no': 8,
+      'kode Mk': 'LSI441',
+      'nama Mk': 'PRAKTIKUM PEMROGRAMAN VISUAL',
+      'sks': 	1.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': '	Laboratorium Komputasi Sains',
+      'jadwal': 'Selasa / Jam 09:10:00 - 10:00:00	',
+      'dosen': 'Edi Saputra, S.T., M.Sc. & Andre Rabiula, S.Kom., M.Eng.',
+    },
+    {
+      'no': 9,
+      'kode Mk': 'FST441',
+      'nama Mk': 'BAHASA INGGRIS II',
+      'sks': 	2.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'FST Gedung B Lantai 3 Ruang 09',
+      'jadwal': 'Selasa / Jam 13:10:00 - 14:50:00',
+      'dosen': 'Ernanda, S.Pd., M.A., Ph.D.',
+    },
+     {
+      'no': 10,
+      'kode Mk': 'UNS161',
+      'nama Mk': 'Kewarganegaraan',
+      'sks': 	2.00,
+      'status': 'B',
+      'kelas': 'R-003',
+      'ruang': 'FST Gedung B Lantai 3 Ruang 08',
+      'jadwal': 'Kamis / Jam 10:10:00 - 11:50:00',
+      'dosen': 'Dawam Suprayogi, S.Pd., M.Sc. & Sundari Utami, S.Pd., M.Sc.',
+    },
+     {
+      'no': 11,
+      'kode Mk': 'DSI346',
+      'nama Mk': 'PROSES BISNIS',
+      'sks': 	2.00,
+      'status': '	B',
+      'kelas': 'R-003',
+      'ruang': 'FST Gedung B Lantai 3 Ruang 08	',
+      'jadwal': 'Senin / Jam 15:40:00 - 17:20:00',
+      'dosen': 'Dewi Lestari, S.Kom., M.S.I. & Yolla Noverina, S.Kom., M.Kom',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    int totalSksDiambil = 0;
+    int jmlMaksimalSks = 24; // Contoh jumlah maksimal SKS
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('KRS'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.all(16.0),
+              children: [
+                Text(
+                  'Kartu Rencana Studi (KRS)',
+                  style: TextStyle(fontSize: 24.0),
+                ),
+                SizedBox(height: 16.0),
+                DataTable(
+                  columns: [
+                    DataColumn(label: Text('No')),
+                    DataColumn(label: Text('Kode MK')),
+                    DataColumn(label: Text('Nama MK')),
+                    DataColumn(label: Text('SKS')),
+                    DataColumn(label: Text('Status')),
+                    DataColumn(label: Text('Kelas')),
+                    DataColumn(label: Text('Ruang')),
+                    DataColumn(label: Text('Jadwal')),
+                    DataColumn(label: Text('Dosen')),
+                  ],
+                  rows: krsList
+                      .map(
+                        (item) => DataRow(
+                          cells: [
+                            DataCell(Text(item['no'].toString())),
+                            DataCell(Text(item['kodeMk'])),
+                            DataCell(Text(item['namaMk'])),
+                            DataCell(Text(item['sks'].toString())),
+                            DataCell(Text(item['status'])),
+                            DataCell(Text(item['kelas'])),
+                            DataCell(Text(item['ruang'])),
+                            DataCell(Text(item['jadwal'])),
+                            DataCell(Text(item['dosen'])),
+                          ],
+                        ),
+                      )
+                      .toList(),
+                ),
+                SizedBox(height: 16.0),
+                Text(
+                  'Total SKS Diambil / Jml Maksimal SKS',
+                  style: TextStyle(fontSize: 18.0),
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  '$totalSksDiambil / $jmlMaksimalSks',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 16.0),
+                Text(
+                  'KRS Telah Disetujui Dosen Pembimbing Akademik',
+                  style: TextStyle(fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+import 'package:flutter/material.dart';
+
+class KrsPage extends StatelessWidget {
+  final List<Map<String, dynamic>> krsList = [
+    {
+      'no': 1,
+      'kodeMk': 'MK001',
+      'namaMk': 'Matematika Dasar',
+      'sks': 3,
+      'status': 'Lulus',
+      'kelas': 'A',
+      'ruang': 'R301',
+      'jadwal': 'Senin, 09:00-11:00',
+      'dosen': 'Dr. John Doe',
+    },
+    {
+      'no': 2,
+      'kodeMk': 'MK002',
+      'namaMk': 'Bahasa Inggris',
+      'sks': 2,
+      'status': 'Lulus',
+      'kelas': 'B',
+      'ruang': 'R302',
+      'jadwal': 'Selasa, 13:00-15:00',
+      'dosen': 'Dr. Jane Smith',
+    },
+    // Tambahkan entri lainnya sesuai kebutuhan
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    int totalSksDiambil = 0;
+    int jmlMaksimalSks = 24; // Contoh jumlah maksimal SKS
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('KRS'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.all(16.0),
+              children: [
+                Text(
+                  'Kartu Rencana Studi (KRS)',
+                  style: TextStyle(fontSize: 24.0),
+                ),
+                SizedBox(height: 16.0),
+                DataTable(
+                  columns: [
+                    DataColumn(label: Text('No')),
+                    DataColumn(label: Text('Kode MK')),
+                    DataColumn(label: Text('Nama MK')),
+                    DataColumn(label: Text('SKS')),
+                    DataColumn(label: Text('Status')),
+                    DataColumn(label: Text('Kelas')),
+                    DataColumn(label: Text('Ruang')),
+                    DataColumn(label: Text('Jadwal')),
+                    DataColumn(label: Text('Dosen')),
+                  ],
+                  rows: krsList
+                      .map(
+                        (item) => DataRow(
+                          cells: [
+                            DataCell(Text(item['no'].toString())),
+                            DataCell(Text(item['kodeMk'])),
+                            DataCell(Text(item['namaMk'])),
+                            DataCell(Text(item['sks'].toString())),
+                            DataCell(Text(item['status'])),
+                            DataCell(Text(item['kelas'])),
+                            DataCell(Text(item['ruang'])),
+                            DataCell(Text(item['jadwal'])),
+                            DataCell(Text(item['dosen'])),
+                          ],
+                        ),
+                      )
+                      .toList(),
+                ),
+                SizedBox(height: 16.0),
+                Text(
+                  'Total SKS Diambil / Jml Maksimal SKS',
+                  style: TextStyle(fontSize: 18.0),
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  '$totalSksDiambil / $jmlMaksimalSks',
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 16.0),
+                Text(
+                  'KRS Telah Disetujui Dosen Pembimbing Akademik',
+                  style: TextStyle(fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
