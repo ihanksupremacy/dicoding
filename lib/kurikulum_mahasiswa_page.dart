@@ -110,8 +110,8 @@ class KurikulumMahasiswaPage extends StatelessWidget {
       'no': 9,
       'kodeMK': 'UNS112',
       'namaMK': 'Pancasila',
-      'sksTotal': 	2.00,
-      'sksTatapMuka': 	2.00,
+      'sksTotal': 2.00,
+      'sksTatapMuka': 2.00,
       'sksPraktek': 0,
       'sksLapangan': 0,
       'sksSimulasi': 0,
@@ -145,7 +145,7 @@ class KurikulumMahasiswaPage extends StatelessWidget {
       'wajib': true,
       'nilaiTertinggi': 'A',
     },
-     {
+    {
       'no': 12,
       'kodeMK': 'DSI126',
       'namaMK': 'MATEMATIKA DISKRIT',
@@ -197,7 +197,7 @@ class KurikulumMahasiswaPage extends StatelessWidget {
       'wajib': true,
       'nilaiTertinggi': 'A',
     },
-     {
+    {
       'no': 16,
       'kodeMK': 'DSI327',
       'namaMK': 'STRUKTUR DATA',
@@ -249,7 +249,7 @@ class KurikulumMahasiswaPage extends StatelessWidget {
       'wajib': true,
       'nilaiTertinggi': 'A',
     },
-     {
+    {
       'no': 20,
       'kodeMK': '	UNJ124',
       'namaMK': 'KEWIRAUSAHAAN BERBASIS AGROINDUSTRI DAN LINGKUNGAN',
@@ -271,17 +271,42 @@ class KurikulumMahasiswaPage extends StatelessWidget {
         title: Text('Kurikulum Mahasiswa'),
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal, // Aktifkan pengguliran horizontal
         child: DataTable(
           columns: const <DataColumn>[
-            DataColumn(label: Text('No')),
-            DataColumn(label: Text('Kode MK')),
+            DataColumn(
+              label: Text('No'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('Kode MK'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
             DataColumn(label: Text('Nama MK')),
-            DataColumn(label: Text('SKS Total')),
-            DataColumn(label: Text('SKS Tatap Muka')),
-            DataColumn(label: Text('SKS Praktek')),
-            DataColumn(label: Text('SKS Lapangan')),
-            DataColumn(label: Text('SKS Simulasi')),
-            DataColumn(label: Text('Semester')),
+            DataColumn(
+              label: Text('SKS Total'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('SKS Tatap Muka'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('SKS Praktek'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('SKS Lapangan'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('SKS Simulasi'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
+            DataColumn(
+              label: Text('Semester'),
+              numeric: true, // Atribut numeric untuk mengatur lebar kolom
+            ),
             DataColumn(label: Text('Wajib')),
             DataColumn(label: Text('Nilai Tertinggi')),
           ],

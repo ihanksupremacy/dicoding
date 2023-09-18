@@ -44,75 +44,78 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         title: Text('SIAKAD UNJA'),
       ),
-      body: Container(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image.asset('images/gambar.png'),
-            SizedBox(height: 16.0),
-            FractionallySizedBox(
-              widthFactor: 1,
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey,
-                    width: 1.0,
+      body: SingleChildScrollView(
+        // Wrap the content in SingleChildScrollView
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Image.asset('images/gambar.png'),
+              SizedBox(height: 16.0),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: TextFormField(
-                  controller: _nimController,
-                  decoration: InputDecoration(
-                    labelText: 'NIM',
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.all(16.0),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 16.0),
-            FractionallySizedBox(
-              widthFactor: 1,
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.grey,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: TextFormField(
-                  controller: _passwordController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.all(16.0),
+                  child: TextFormField(
+                    controller: _nimController,
+                    decoration: InputDecoration(
+                      labelText: 'NIM',
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(16.0),
+                    ),
                   ),
                 ),
               ),
-            ),
-            if (_isLoginFailed)
-              Padding(
-                padding: const EdgeInsets.only(top: 8.0),
-                child: Text(
-                  'NIM atau password salah',
-                  style: TextStyle(
-                    color: Colors.red,
+              SizedBox(height: 16.0),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(16.0),
+                    ),
                   ),
                 ),
               ),
-            SizedBox(height: 32.0),
-            FractionallySizedBox(
-              widthFactor:1,
-              child: ElevatedButton(
-                child: Text('Login'),
-                onPressed: _login,
+              if (_isLoginFailed)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    'NIM atau password salah',
+                    style: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+              SizedBox(height: 32.0),
+              FractionallySizedBox(
+                widthFactor: 1,
+                child: ElevatedButton(
+                  child: Text('Login'),
+                  onPressed: _login,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

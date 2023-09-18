@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RiwayatRegistrasiPage extends StatelessWidget {
   final List<Map<String, dynamic>> riwayatRegistrasi = [
-     {
+    {
       'no': 1,
       'semester': 'ganjil 2021/2022',
       'status': 'Aktif',
@@ -17,10 +17,10 @@ class RiwayatRegistrasiPage extends StatelessWidget {
       'petugas': 'BRI',
     },
     {
-      'no': 2,
+      'no': 3,
       'semester': 'Ganjil 2022/2023',
       'status': 'Aktif',
-      'tanggal': '2022-08-05 08:08:472',
+      'tanggal': '2022-08-05 08:08:47',
       'petugas': 'BRI',
     },
     {
@@ -38,8 +38,8 @@ class RiwayatRegistrasiPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Riwayat Registrasi'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.horizontal, // Aktifkan pengguliran horizontal
         child: DataTable(
           columns: [
             DataColumn(label: Text('No')),
@@ -48,19 +48,17 @@ class RiwayatRegistrasiPage extends StatelessWidget {
             DataColumn(label: Text('Tanggal Registrasi')),
             DataColumn(label: Text('Petugas')),
           ],
-          rows: riwayatRegistrasi
-              .map(
-                (registrasi) => DataRow(
-                  cells: [
-                    DataCell(Text(registrasi['no'].toString())),
-                    DataCell(Text(registrasi['semester'])),
-                    DataCell(Text(registrasi['status'])),
-                    DataCell(Text(registrasi['tanggal'])),
-                    DataCell(Text(registrasi['petugas'])),
-                  ],
-                ),
-              )
-              .toList(),
+          rows: riwayatRegistrasi.map((registrasi) {
+            return DataRow(
+              cells: [
+                DataCell(Text(registrasi['no'].toString())),
+                DataCell(Text(registrasi['semester'])),
+                DataCell(Text(registrasi['status'])),
+                DataCell(Text(registrasi['tanggal'])),
+                DataCell(Text(registrasi['petugas'])),
+              ],
+            );
+          }).toList(),
         ),
       ),
     );

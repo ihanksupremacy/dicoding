@@ -18,7 +18,7 @@ class KhsPage extends StatelessWidget {
       'status': 'B',
       'sks': 2.00,
       'nilaiHuruf': '	A-',
-      'nilaiAngka': 	3.75,
+      'nilaiAngka': 3.75,
     },
     {
       'no': 3,
@@ -36,9 +36,9 @@ class KhsPage extends StatelessWidget {
       'status': 'B',
       'sks': 2.00,
       'nilaiHuruf': 'B+',
-      'nilaiAngka': 	3.50,
+      'nilaiAngka': 3.50,
     },
-     {
+    {
       'no': 5,
       'kodeMK': 'FST116',
       'namaMK': '	TEKNOLOGI INFORMASI DAN KOMUNIKASI',
@@ -54,7 +54,7 @@ class KhsPage extends StatelessWidget {
       'status': 'B',
       'sks': 1.00,
       'nilaiHuruf': 'B+',
-      'nilaiAngka': 	3.50,
+      'nilaiAngka': 3.50,
     },
     {
       'no': 7,
@@ -72,7 +72,7 @@ class KhsPage extends StatelessWidget {
       'status': 'B',
       'sks': 2.00,
       'nilaiHuruf': 'A-',
-      'nilaiAngka': 	3.75,
+      'nilaiAngka': 3.75,
     },
     {
       'no': 9,
@@ -99,9 +99,8 @@ class KhsPage extends StatelessWidget {
       'status': 'B',
       'sks': 2.00,
       'nilaiHuruf': 'A',
-      'nilaiAngka': 	4.00,
+      'nilaiAngka': 4.00,
     },
-    
   ];
 
   final List<Map<String, dynamic>> khsListSemester2 = [
@@ -128,7 +127,7 @@ class KhsPage extends StatelessWidget {
       'kodeMK': 'DSI224',
       'namaMK': 'MBASIS DATA I',
       'status': 'B',
-      'sks': 2.00	,
+      'sks': 2.00,
       'nilaiHuruf': 'B+',
       'nilaiAngka': 3.50,
     },
@@ -164,7 +163,7 @@ class KhsPage extends StatelessWidget {
       'kodeMK': 'LSI224',
       'namaMK': 'PRAKTIKUM BASIS DATA I',
       'status': 'B',
-      'sks': 1.00	,
+      'sks': 1.00,
       'nilaiHuruf': 'A-',
       'nilaiAngka': 3.75,
     },
@@ -187,7 +186,7 @@ class KhsPage extends StatelessWidget {
       'nilaiAngka': 3.50,
     },
   ];
-final List<Map<String, dynamic>> khsListSemester3 = [
+  final List<Map<String, dynamic>> khsListSemester3 = [
     {
       'no': 1,
       'kodeMK': 'DSI231',
@@ -211,7 +210,7 @@ final List<Map<String, dynamic>> khsListSemester3 = [
       'kodeMK': 'DSI237',
       'namaMK': 'STATISTIKA DASAR',
       'status': 'B',
-      'sks': 3.00	,
+      'sks': 3.00,
       'nilaiHuruf': 'B+',
       'nilaiAngka': 3.50,
     },
@@ -247,7 +246,7 @@ final List<Map<String, dynamic>> khsListSemester3 = [
       'kodeMK': 'DSI451',
       'namaMK': 'Sistem Informasi Manajemen',
       'status': 'B',
-      'sks': 3.00	,
+      'sks': 3.00,
       'nilaiHuruf': 'A-',
       'nilaiAngka': 3.75,
     },
@@ -269,7 +268,7 @@ final List<Map<String, dynamic>> khsListSemester3 = [
       'nilaiHuruf': 'A',
       'nilaiAngka': 4.00,
     },
-     {
+    {
       'no': 10,
       'kodeMK': '	LSI334',
       'namaMK': 'PRAKTIKUM PEMROGRAMAN BERORIENTASI OBJEK',
@@ -377,7 +376,7 @@ final List<Map<String, dynamic>> khsListSemester3 = [
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Total SKS Semester 2: 18', 
+                          'Total SKS Semester 2: 18',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 8.0),
@@ -388,7 +387,7 @@ final List<Map<String, dynamic>> khsListSemester3 = [
                       ],
                     ),
                   ),
-                    SizedBox(height: 32.0),
+                  SizedBox(height: 32.0),
                   DataTable(
                     columns: const <DataColumn>[
                       DataColumn(label: Text('No')),
@@ -420,12 +419,12 @@ final List<Map<String, dynamic>> khsListSemester3 = [
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Total SKS Semester 2: 18', 
+                          'Total SKS Semester 2: 18',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 8.0),
                         Text(
-                          'IP Semester 2: 3.5', 
+                          'IP Semester 2: 3.5',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ],
