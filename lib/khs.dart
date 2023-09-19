@@ -294,148 +294,59 @@ class KhsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('KHS'),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: DefaultTabController(
+        length: 3,
+        child: Column(
+          children: [
+            TabBar(
+              tabs: [
+                Tab(text: 'Semester 1'),
+                Tab(text: 'Semester 2'),
+                Tab(text: 'Semester 3'),
+              ],
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+            ),
+            Expanded(
+              child: TabBarView(
                 children: [
-                  DataTable(
-                    columns: const <DataColumn>[
-                      DataColumn(label: Text('No')),
-                      DataColumn(label: Text('Kode MK')),
-                      DataColumn(label: Text('Nama MK')),
-                      DataColumn(label: Text('Status')),
-                      DataColumn(label: Text('SKS')),
-                      DataColumn(label: Text('Nilai Huruf')),
-                      DataColumn(label: Text('Nilai Angka')),
-                    ],
-                    rows: khsListSemester1.map((khs) {
-                      return DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('${khs['no']}')),
-                          DataCell(Text('${khs['kodeMK']}')),
-                          DataCell(Text('${khs['namaMK']}')),
-                          DataCell(Text('${khs['status']}')),
-                          DataCell(Text('${khs['sks']}')),
-                          DataCell(Text('${khs['nilaiHuruf']}')),
-                          DataCell(Text('${khs['nilaiAngka']}')),
-                        ],
-                      );
-                    }).toList(),
-                  ),
-                  SizedBox(height: 16.0),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Total SKS Semester 1: 20', // Ganti dengan perhitungan total SKS semester 1
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 8.0),
-                        Text(
-                          'IP Semester 1: 3.75', // Ganti dengan perhitungan IP semester 1
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 32.0),
-                  DataTable(
-                    columns: const <DataColumn>[
-                      DataColumn(label: Text('No')),
-                      DataColumn(label: Text('Kode MK')),
-                      DataColumn(label: Text('Nama MK')),
-                      DataColumn(label: Text('Status')),
-                      DataColumn(label: Text('SKS')),
-                      DataColumn(label: Text('Nilai Huruf')),
-                      DataColumn(label: Text('Nilai Angka')),
-                    ],
-                    rows: khsListSemester2.map((khs) {
-                      return DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('${khs['no']}')),
-                          DataCell(Text('${khs['kodeMK']}')),
-                          DataCell(Text('${khs['namaMK']}')),
-                          DataCell(Text('${khs['status']}')),
-                          DataCell(Text('${khs['sks']}')),
-                          DataCell(Text('${khs['nilaiHuruf']}')),
-                          DataCell(Text('${khs['nilaiAngka']}')),
-                        ],
-                      );
-                    }).toList(),
-                  ),
-                  SizedBox(height: 16.0),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Total SKS Semester 2: 18',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 8.0),
-                        Text(
-                          'IP Semester 2: 3.5',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 32.0),
-                  DataTable(
-                    columns: const <DataColumn>[
-                      DataColumn(label: Text('No')),
-                      DataColumn(label: Text('Kode MK')),
-                      DataColumn(label: Text('Nama MK')),
-                      DataColumn(label: Text('Status')),
-                      DataColumn(label: Text('SKS')),
-                      DataColumn(label: Text('Nilai Huruf')),
-                      DataColumn(label: Text('Nilai Angka')),
-                    ],
-                    rows: khsListSemester3.map((khs) {
-                      return DataRow(
-                        cells: <DataCell>[
-                          DataCell(Text('${khs['no']}')),
-                          DataCell(Text('${khs['kodeMK']}')),
-                          DataCell(Text('${khs['namaMK']}')),
-                          DataCell(Text('${khs['status']}')),
-                          DataCell(Text('${khs['sks']}')),
-                          DataCell(Text('${khs['nilaiHuruf']}')),
-                          DataCell(Text('${khs['nilaiAngka']}')),
-                        ],
-                      );
-                    }).toList(),
-                  ),
-                  SizedBox(height: 16.0),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Total SKS Semester 2: 18',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 8.0),
-                        Text(
-                          'IP Semester 2: 3.5',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                  ),
+                  buildKhsListView(khsListSemester1),
+                  buildKhsListView(khsListSemester2),
+                  buildKhsListView(khsListSemester3),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
+
+  Widget buildKhsListView(List<Map<String, dynamic>> khsList) {
+    return ListView.builder(
+      itemCount: khsList.length,
+      itemBuilder: (context, index) {
+        final khs = khsList[index];
+        return ListTile(
+          title: Text('${khs['no']}. ${khs['namaMK']}'),
+          subtitle: Text('Kode MK: ${khs['kodeMK']}, Status: ${khs['status']}'),
+          trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text('SKS: ${khs['sks']}'),
+              Text('Nilai Huruf: ${khs['nilaiHuruf']}'),
+              Text('Nilai Angka: ${khs['nilaiAngka']}'),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: KhsPage(),
+  ));
 }
